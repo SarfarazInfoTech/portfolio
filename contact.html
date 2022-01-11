@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/style.scss">
+
+
+    <!-- contacts us js mail -->
+    <!-- <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_FtZme5mtqGogbSGAK5R6j");
+        })();
+    </script> -->
+
+</head>
+
+<body>
+    <!-- navbar section starts  -->
+    <nav class="navbar">
+        <a href="/"> <i class="fas fa-home"></i> <span>home</span> </a>
+        <a href="about"> <i class="fas fa-user"></i> <span>about</span> </a>
+        <a href="projects"> <i class="fas fa-briefcase"></i> <span>Projects</span> </a>
+        <a href="blogs"> <i class="fas fa-blog"></i> <span>blogs</span> </a>
+        <a href="contact"> <i class="fas fa-address-book"></i> <span>contact</span> </a>
+    </nav>
+    <!-- navbar section ends -->
+
+    <!-- contact section starts  -->
+    <section class="contact">
+
+        <h1 class="heading"> contact <span>me</span> </h1>
+
+        <div class="row">
+
+            <div class="info-container">
+
+                <h1>get in touch</h1>
+                <p>i have experience in designing & developing user interfaces, testing, debugging & optimizing web
+                    functionality that improve workflow efficiencies.</p>
+                <div class="box-container">
+
+                    <div class="box">
+                        <i class="fas fa-map"></i>
+                        <div class="info">
+                            <h3>address :</h3>
+                            <p>House no. 53, Kamakshi Society Roshanbag <br> Kharbi Road, nagpur mh. india - 440034</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <h3>email :</h3>
+                            <p>sarfarazkhan2020@hotmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <i class="fas fa-phone"></i>
+                        <div class="info">
+                            <h3>number :</h3>
+                            <p>+91 8554843519</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="share">
+                    <a href="https://github.com/SarfarazInfoTech" target="_blank" class="fab fa-github"></a>
+                    <a href="https://www.linkedin.com/in/sarfarazinfotech/" target="_blank" class="fab fa-linkedin"></a>
+                    <a href="https://twitter.com/sarfaraztechcom" target="_blank" class="fab fa-twitter"></a>
+                    <a href="https://www.instagram.com/sarfarazrazaqadriofficial/" target="_blank"
+                        class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/sarfarazrazaqadriofficial/" target="_blank"
+                        class="fab fa-facebook-f"></a>
+                    <a href="https://www.youtube.com/sarfarazrazaqadriofficial/" target="_blank"
+                        class="fab fa-youtube"></a>
+                </div>
+
+            </div>
+
+            <form action="" method="POST">
+
+                <div class="inputBox">
+                    <input type="text" id="toName" placeholder="Name">
+                    <input type="number" id="toNo" placeholder="Phone">
+                </div>
+
+                <div class="inputBox">
+                    <input type="email" id="fromName" placeholder="Email">
+                    <input type="text" id="sub" placeholder="Subject">
+                </div>
+
+                <textarea name="" placeholder="Message" id="msg" cols="30" rows="10"></textarea>
+
+                <input type="submit" value="send message" class="btn" onclick='sendMail()'>
+
+            </form>
+
+        </div>
+
+    </section>
+    <!-- contact section ends -->
+
+</body>
+
+</html>
