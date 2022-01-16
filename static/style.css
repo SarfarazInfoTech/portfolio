@@ -675,7 +675,7 @@ section {
 }
 /*# sourceMappingURL=style.css.map */
 
-
+/* hide input number bar  */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
