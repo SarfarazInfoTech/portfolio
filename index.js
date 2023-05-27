@@ -3,6 +3,7 @@ const path = require("path"); // get method
 const app = express(); 
 
 const PORT = process.env.PORT;
+// const PORT = 3000;
 
 // SERVER
 app.listen(PORT, () => {

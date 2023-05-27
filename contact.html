@@ -17,16 +17,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon_io/site.webmanifest">
 
-
-    <!-- contacts us js mail -->
-    <!-- <script src="script.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_FtZme5mtqGogbSGAK5R6j");
-        })();
-    </script> -->
-
 </head>
 
 <body>
@@ -94,21 +84,24 @@
 
             </div>
 
-            <form action="" method="POST">
+            <form action="javascript:sendmail()" method="post">
 
                 <div class="inputBox">
-                    <input type="text" id="toName" placeholder="Name">
-                    <input type="number" id="toNo" placeholder="Phone">
+                    <input type="text" id="Name" placeholder="Name">
+                    <input type="number" id="Phone" placeholder="Phone">
                 </div>
 
                 <div class="inputBox">
-                    <input type="email" id="fromName" placeholder="Email">
-                    <input type="text" id="sub" placeholder="Subject">
+                    <input type="email" id="Sender" placeholder="Email">
+                    <input type="text" id="Subject" placeholder="Subject">
                 </div>
 
-                <textarea name="" placeholder="Message" id="msg" cols="30" rows="10"></textarea>
+                <textarea name="" placeholder="Message" id="Message" cols="30" rows="10"></textarea>
 
-                <input type="submit" value="send message" class="btn" onclick='sendMail()'>
+                <!-- <input type="submit" value="send message" class="btn" onclick='sendMail()'> -->
+
+                <!-- <button type="submit" class="btn btn-contact">Send Message</button> -->
+                <input type="button" class="btn btn-contact" onclick="sendmail();" value="Send Message">
 
             </form>
 
@@ -117,6 +110,49 @@
     </section>
     <!-- contact section ends -->
 
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+
+        function sendmail() {
+
+            var name = $('#Name').val();
+            var phone = $('#Phone').val();
+            var email = $('#Sender').val();
+            var subject = $('#Subject').val();
+            var message = $('#Message').val();
+
+            // var body = $('#body').val();
+
+            // var Body = 'Name: ' + name + '<br>Phone: '  + '<br>Email: ' + email + '<br>Subject: ' + subject + '<br>Message: ' + message;
+            var Body = `Name: ${name} Phone: ${phone} Email: ${email} Subject: ${subject} Message: ${message}`;
+            // console.log(name, phone, email, subject, message);
+
+            Email.send({
+                SecureToken: "4a34bb26-1d61-45cf-9c0a-de977f685bbf",
+                Password: 'CDC8D2971C078AB7EC466FED73ED153CAD07',
+                To: 'bhaijaanchoclaty@gmail.com',
+                From: "bhaijaanchoclaty@gmail.com",
+                Subject: "New message on contact from " + name,
+                Body: Body
+            }).then(
+                message => {
+                    console.log (message);
+                    if (message == 'OK') {
+                        alert('Your mail has been send. Thank you for connecting.');
+                    }
+                    else {
+                        console.log(message);
+                        alert('There is error at sending message. ')
+
+                    }
+                }
+            );
+        }
+    </script>
 </body>
 
 </html>
